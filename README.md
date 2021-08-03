@@ -5,7 +5,7 @@
 
 ```scss
 $technologies: 'HTML', 'CSS', 'JS', 'SCSS', 'NODEJS';
-$tools: 'BOOTSTRAP', 'FIGMA', 'PHOTOSHOP'
+$tools: 'BOOTSTRAP', 'FIGMA', 'PHOTOSHOP';
 $favourite-color: #34eb4f;
 $years-old: 12px;
 
