@@ -17,6 +17,11 @@ Luihh {
 ```
 <hr />
 
+### My Discord Profile
+
+![My Discord Profile](https://discord.c99.nl/widget/theme-3/481268875586174986.png)
+<hr />
+
 ### My Github Stats
 
 [![Luihh's GitHub stats](https://github-readme-stats.vercel.app/api?username=iLui&show_icons=true&theme=dark)](https://github.com/iLui)
