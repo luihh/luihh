@@ -3,16 +3,15 @@
 
 ### About me in code
 
-```scss
-$technologies: 'HTML', 'CSS', 'JS', 'SCSS', 'NODEJS';
-$tools: 'BOOTSTRAP', 'FIGMA', 'PHOTOSHOP';
-$favourite-color: #34eb4f;
-$years-old: 12px;
-
-Luihh {
-  text-align: center;
-  background-color: $favourite-color;
-  padding: $years-old;
+```js
+const Luihh = {
+  technologies: ['HTML', 'CSS', 'JS', 'SCSS', 'NODEJS'],
+  tools: ['BOOTSTRAP', 'PHOTOSHOP'],
+  age: 12,
+  workingOn: 'idk',
+  learning: 'idk',
+  contactMe: 'luihhbusiness23@gmail.com',
+  pronouns: ['he', 'him']
 }
 ```
 <hr />
