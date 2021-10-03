@@ -7,7 +7,6 @@
 const Luihh = {
   technologies: ['HTML', 'CSS', 'JS', 'SCSS', 'NODEJS'],
   tools: ['BOOTSTRAP', 'PHOTOSHOP'],
-  age: 12,
   workingOn: 'idk',
   learning: 'idk',
   contactMe: 'luihhbusiness23@gmail.com',
