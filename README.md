@@ -6,18 +6,12 @@
 ```js
 const Luihh = {
   technologies: ['HTML', 'CSS', 'JS', 'SCSS', 'NODEJS'],
-  tools: ['BOOTSTRAP', 'PHOTOSHOP'],
   workingOn: 'idk',
   learning: 'idk',
-  contactMe: 'luihhbusiness23@gmail.com',
+  discord: 'Luihh#2507',
   pronouns: ['he', 'him']
 }
 ```
-<hr />
-
-### My Discord Profile
-
-![My Discord Profile](https://discord.c99.nl/widget/theme-3/481268875586174986.png)
 <hr />
 
 ### My Github Stats
