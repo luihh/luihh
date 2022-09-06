@@ -7,7 +7,7 @@
 const Luihh = {
   technologies: ['HTML', 'CSS', 'SCSS' 'JS' 'NODEJS'],
   workingOn: null,
-  learning: ['NextJS', 'Typescript', 'C#'],
+  learning: ['C++', 'C#'],
   discord: 'Luihh#2507',
   pronouns: ['he', 'him']
 }
