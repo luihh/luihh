@@ -5,7 +5,7 @@
 
 ```js
 const Luihh = {
-  technologies: ['JS', 'NodeJS', 'React', 'NextJS', 'ElectronJS'],
+  technologies: ['HTML', 'CSS', 'JS', 'NodeJS', 'React', 'NextJS', 'Electron'],
   learning: ['Astro', 'TailwindCSS'],
   workingOn: null
 }
