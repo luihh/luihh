@@ -7,7 +7,6 @@
 const Luihh = {
   technologies: ['HTML', 'CSS', 'JS', 'NodeJS', 'React', 'NextJS', 'Electron'],
   learning: ['Astro', 'TailwindCSS'],
-  workingOn: null
 }
 ```
 <hr />
