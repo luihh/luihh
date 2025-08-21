@@ -4,7 +4,7 @@ const { class: className, href, color, props } = Astro.props;
 
 <a
   href={href}
-  class={`inline-block bg-ctp-${color} text-ctp-base px-6 py-3 rounded-lg shadow hover:bg-ctp-blue/80 transition ${className}`}
+  class={`inline-block bg-ctp-${color} text-ctp-base px-6 py-3 rounded-lg shadow hover:bg-ctp-${color}/80 transition ${className}`}
   {...props}
 >
   <slot />
