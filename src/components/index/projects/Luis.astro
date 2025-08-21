@@ -1,3 +1,7 @@
+---
+import Button from '../../Button.astro';
+---
+
 <div class="flex flex-col md:flex-row items-center gap-8">
   <div class="w-full md:w-1/2">
     <img
@@ -20,24 +24,21 @@
     </p>
 
     <div class="flex flex-wrap gap-4">
-      <a
+      <Button
         href="https://luihh.is-a.dev/luis"
-        class="inline-block bg-ctp-green text-ctp-base px-6 py-3 rounded-lg shadow hover:bg-ctp-green/80 transition"
+        color="green"
+        >Website</Button
       >
-        Website
-      </a>
-      <a
+      <Button
         href="https://luihh.is-a.dev/invite"
-        class="inline-block bg-ctp-blue text-ctp-base px-6 py-3 rounded-lg shadow hover:bg-ctp-blue/80 transition"
+        color="blue"
+        >Invitation</Button
       >
-        Invitation
-      </a>
-      <a
+      <Button
         href="https://luihh.is-a.dev/patreon"
-        class="inline-block bg-ctp-red text-ctp-base px-6 py-3 rounded-lg shadow hover:bg-ctp-red/80 transition"
+        color="red"
+        >Patreon</Button
       >
-        Patreon
-      </a>
     </div>
   </div>
 </div>

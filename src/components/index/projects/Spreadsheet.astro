@@ -1,3 +1,7 @@
+---
+import Button from '../../Button.astro';
+---
+
 <div class="flex flex-col md:flex-row items-center gap-8">
   <div class="w-full md:w-1/2 text-pretty order-2 md:order-1">
     <h2 class="text-3xl font-bold text-ctp-text mb-4">
@@ -13,12 +17,11 @@
     </p>
 
     <div class="flex flex-wrap gap-4">
-      <a
+      <Button
         href="https://luihh.is-a.dev/spreadsheet"
-        class="inline-block bg-ctp-blue text-ctp-base px-6 py-3 rounded-lg shadow hover:bg-ctp-blue/80 transition"
+        color="blue"
+        >Check it out!</Button
       >
-        Check it out!
-      </a>
     </div>
   </div>
 
