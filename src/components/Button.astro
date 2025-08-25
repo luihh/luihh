@@ -1,10 +1,25 @@
 ---
-const { class: className, href, color, props } = Astro.props;
+const COLORS = {
+  blue: 'bg-ctp-blue hover:bg-ctp-blue/80',
+  red: 'bg-ctp-red hover:bg-ctp-red/80',
+  green: 'bg-ctp-green hover:bg-ctp-green/80',
+};
+
+type Color = keyof typeof COLORS;
+
+interface ButtonProps {
+  class?: string;
+  href: string;
+  color: Color;
+  props?: Record<string, any>;
+}
+
+const { class: className, href, color, props } = Astro.props as ButtonProps;
 ---
 
 <a
   href={href}
-  class={`inline-block bg-ctp-${color} text-ctp-base px-6 py-3 rounded-lg shadow hover:bg-ctp-${color}/80 transition ${className}`}
+  class={`inline-block ${COLORS[color]} text-ctp-base px-6 py-3 rounded-lg shadow transition ${className}`}
   {...props}
 >
   <slot />
