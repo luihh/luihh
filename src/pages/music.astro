@@ -1,0 +1,62 @@
+---
+export const prerender = true;
+
+import songFetch from '../utils/songFetch';
+import getColorPalette from '../utils/getColorPalette';
+
+import Layout from '../layouts/MusicLayout.astro';
+
+const { artist, track, album, url, imageURL, nowPlaying } = await songFetch();
+const palette = await getColorPalette(imageURL);
+---
+
+<Layout
+  title={`${track} - ${artist}`}
+  favicon={imageURL}
+  styles={`background-image: linear-gradient(to bottom right, ${palette.LightVibrant?.hex}, ${palette.Vibrant?.hex})`}
+>
+  <main
+    class="flex flex-col gap-6 px-4 text-center items-center justify-center h-screen"
+  >
+    <p
+      class={nowPlaying ? 'animate-float' : ''}
+      style={`color: ${palette.Vibrant?.bodyTextColor}`}
+    >
+      {nowPlaying ? '🎧 Now playing...' : 'Last track played'}
+    </p>
+
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      role="link"
+    >
+      <img
+        class="rounded-lg shadow-lg hover:scale-105 transition"
+        src={imageURL}
+        alt={`${track} cover`}
+      />
+    </a>
+
+    <div class="w-full">
+      <h2
+        class={`text-4xl font-bold`}
+        style={`color: ${palette.Vibrant?.bodyTextColor}`}
+      >
+        {track}
+      </h2>
+      <p
+        class="text-2xl text-pretty font-semibold"
+        style={`color: ${palette.Vibrant?.bodyTextColor}`}
+      >
+        {album}
+      </p>
+      <p
+        class="text-xl text-pretty"
+        style={`color: ${palette.Vibrant?.bodyTextColor}`}
+      >
+        {artist}
+      </p>
+    </div>
+  </main>
+</Layout>

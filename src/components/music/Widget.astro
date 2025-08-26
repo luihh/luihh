@@ -1,0 +1,27 @@
+---
+import songFetch from '../../utils/songFetch';
+
+const { artist, track, imageURL, nowPlaying } = await songFetch();
+---
+
+{
+  nowPlaying ? (
+    <div class="flex w-full sm:w-1/2 justify-center sm:justify-end animate-float">
+      <a
+        href="/music"
+        class="p-4 rounded-xl shadow-lg bg-ctp-surface0 flex flex-col items-center text-center"
+      >
+        <h2 class="text-sm text-ctp-subtext0">🎵 Now playing...</h2>
+        <p class="text-lg font-bold text-ctp-text">{track}</p>
+        <p class="text-base font-semibold text-ctp-text">{artist}</p>
+        <img
+          class="mt-2 size-32 rounded-xl shadow"
+          src={imageURL}
+          alt={`${track} cover`}
+        />
+      </a>
+    </div>
+  ) : (
+    ''
+  )
+}
