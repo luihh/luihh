@@ -17,6 +17,7 @@ export default defineConfig({
     schema: {
       LASTFM_API_KEY: envField.string({ context: 'server', access: 'secret' }),
       LASTFM_USERNAME: envField.string({ context: 'server', access: 'public' }),
+      SHEET_ID: envField.string({ context: 'server', access: 'secret' }),
     },
   },
 

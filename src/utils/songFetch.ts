@@ -1,5 +1,4 @@
-import { LASTFM_API_KEY } from 'astro:env/server';
-import { LASTFM_USERNAME } from 'astro:env/server';
+import { LASTFM_API_KEY, LASTFM_USERNAME } from 'astro:env/server';
 
 const BASE_URL = 'https://ws.audioscrobbler.com/2.0';
 

@@ -1,0 +1,90 @@
+---
+import { SHEET_ID } from 'astro:env/server';
+import {
+  getCellColor,
+  getEnjoymentColor,
+  getTierColor,
+  getWorstFailColor,
+} from '../../utils/spreadsheet';
+
+import type { CompletionStatus } from '../../consts';
+
+import CheckIcon from '../icons/Check.astro';
+import CrossIcon from '../icons/Cross.astro';
+import OngoingIcon from '../icons/Ongoing.astro';
+import QuestionMarkIcon from '../icons/QuestionMark.astro';
+
+interface SheetRow {
+  '#': string;
+  Level: string;
+  '100%': CompletionStatus;
+  Attempts: string;
+  Enjoyment: string;
+  'Worst Fail': string;
+  'Tier (NLW)': string;
+  'Extras / Fun Facts': string;
+}
+
+const response = await fetch(`https://opensheet.elk.sh/${SHEET_ID}/1`);
+const data: SheetRow[] = await response.json();
+const headers =
+  data.length > 0 ? (Object.keys(data[0]) as (keyof SheetRow)[]) : [];
+---
+
+<div class="w-auto overflow-x-auto">
+  <table class="text-sm text-ctp-subtext0">
+    <thead class="text-xm uppercase text-ctp-overlay1 bg-ctp-mantle">
+      <tr>
+        {
+          headers.map((header) => (
+            <th
+              scope="col"
+              class="px-6 py-3"
+            >
+              {header}
+            </th>
+          ))
+        }
+      </tr>
+    </thead>
+    <tbody>
+      {
+        data.map((row) => (
+          <tr class="bg-ctp-crust border-b border-ctp-mantle">
+            {Object.values(row).map((cell, cellIndex) => {
+              let cellColumn = Object.keys(row)[cellIndex];
+              return (
+                <td
+                  class={`px-4 py-4 font-bold whitespace-nowrap 
+                ${cellColumn === '#' ? 'bg-ctp-mantle text-ctp-overlay1' : ''} 
+                ${cellColumn === 'Level' ? 'text-ctp-text' : ''} 
+                ${cellColumn === '100%' ? getCellColor(cell) : ''}
+                ${cellColumn === 'Enjoyment' ? getEnjoymentColor(cell) : ''} 
+                ${cellColumn === 'Worst Fail' ? getWorstFailColor(cell) : ''}
+                ${cellColumn === 'Tier (NLW)' ? getTierColor(cell) : ''}
+                `}
+                >
+                  <div class="flex justify-center">
+                    {cellIndex === 2 && cell === 'TRUE' && (
+                      <CheckIcon class="text-xl text-black/50" />
+                    )}
+                    {cellIndex === 2 && cell === 'ONGOING' && (
+                      <OngoingIcon class="text-xl text-black/50" />
+                    )}
+                    {cellIndex === 2 && cell === 'MAYBE' && (
+                      <QuestionMarkIcon class="text-xl text-black/50" />
+                    )}
+                    {cellIndex === 2 && cell === 'FALSE' && (
+                      <CrossIcon class="text-xl text-black/50" />
+                    )}
+                    {cellIndex !== 2 && cell}
+                  </div>
+                </td>
+              );
+            })}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

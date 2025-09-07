@@ -1,0 +1,32 @@
+---
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import Table from '../components/spreadsheet/Table.astro';
+---
+
+<Layout
+  title="Luihh's Extreme Demons Spreadsheet"
+  description="self-explanatory"
+>
+  <Container class="text-center">
+    <h1 class="text-4xl font-bold text-ctp-text sm:text-5xl">
+      Hey, I'm Luihh!
+    </h1>
+    <p class="mt-6 text-xl text-ctp-subtext1">
+      This is my spreadsheet of all the Extreme Demons that I've completed or
+      I'm planning to beat!
+    </p>
+  </Container>
+  <section class="flex justify-center mx-auto container">
+    <Table server:defer>
+      <p
+        slot="fallback"
+        class="text-xl text-ctp-overlay1"
+      >
+        Loading...
+      </p>
+    </Table>
+  </section>
+</Layout>
