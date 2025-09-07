@@ -20,17 +20,17 @@ export const RATING_THRESHOLDS = {
 } as const;
 
 export const TIER_COLORS = {
-  Beginner: 'text-ctp-blue-400',
-  Easy: 'text-ctp-cyan-200',
-  Medium: 'text-ctp-green-300',
-  Hard: 'text-ctp-yellow-200',
-  'Very Hard': 'text-ctp-yellow-500',
-  Insane: 'text-ctp-red-500',
-  Extreme: 'text-ctp-purple-400',
-  Remorseless: 'text-ctp-violet-500',
-  Relentless: 'text-ctp-violet-300',
-  Terrifying: 'text-ctp-pink-200',
-  Catastrophic: 'text-ctp-rose-400',
+  Beginner: 'text-blue-400',
+  Easy: 'text-cyan-200',
+  Medium: 'text-green-300',
+  Hard: 'text-yellow-200',
+  'Very Hard': 'text-yellow-500',
+  Insane: 'text-red-500',
+  Extreme: 'text-purple-400',
+  Remorseless: 'text-violet-500',
+  Relentless: 'text-violet-300',
+  Terrifying: 'text-pink-200',
+  Catastrophic: 'text-rose-400',
 } as const;
 
 export type TierColorKey = keyof typeof TIER_COLORS;
