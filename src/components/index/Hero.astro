@@ -6,9 +6,13 @@ import GitHubIcon from '../icons/GitHub.astro';
 import PayPalIcon from '../icons/PayPal.astro';
 ---
 
-<div class="flex flex-col sm:flex-row gap-8">
-  <div class="w-full sm:max-w-xl">
-    <div class="flex items-center gap-4 mb-4">
+<div
+  class="flex flex-col items-center sm:flex-row sm:items-start sm-justify-between gap-8"
+>
+  <div
+    class="w-full sm:max-w-xl flex flex-col items-center sm:items-start text-center sm:text-left"
+  >
+    <div class="flex items-center gap-4">
       <img
         src="./luihh.webp"
         alt="Luihh"
@@ -18,7 +22,7 @@ import PayPalIcon from '../icons/PayPal.astro';
         Hey, I'm Luihh!
       </h1>
     </div>
-    <div class="mt-6 text-xl text-ctp-subtext1">
+    <div class="text-xl text-ctp-subtext1 mt-4">
       <p>
         <strong class="text-ctp-yellow">JavaScript</strong> & <strong
           class="text-ctp-blue">TypeScript</strong
@@ -31,7 +35,7 @@ import PayPalIcon from '../icons/PayPal.astro';
       <p>I make silly projects for fun</p>
     </div>
 
-    <nav class="flex flex-wrap gap-4 mt-8">
+    <nav class="flex flex-wrap justify-center sm:justify-start gap-4 mt-6">
       <SocialPill href="https://github.com/luihh/">
         <GitHubIcon />
         GitHub

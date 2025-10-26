@@ -2,12 +2,14 @@
 import Button from '../../Button.astro';
 ---
 
-<div class="flex flex-col md:flex-row items-center gap-8">
-  <div class="w-full md:w-1/2 text-pretty order-2 md:order-1">
+<div class="flex flex-col sm:flex-row items-center gap-8">
+  <div
+    class="w-full sm:w-1/2 order-2 sm:order-1 flex flex-col items-center sm:items-start text-center sm:text-start"
+  >
     <h2 class="text-3xl font-bold text-ctp-text mb-4">
       My <span class="text-ctp-red">Extreme Demons</span> spreadsheet
     </h2>
-    <p class="text-ctp-subtext1 text-lg text-pretty mb-6">
+    <p class="text-ctp-subtext1 text-lg text-balance mb-6">
       You know... I'm also a <strong class="text-ctp-yellow">GD player</strong>,
       more exactly I'm a <strong class="text-ctp-red"
         >extreme demon farmer</strong
@@ -16,7 +18,7 @@ import Button from '../../Button.astro';
       > I've beaten, as well as the ones I plan to beat in the future.
     </p>
 
-    <div class="flex flex-wrap gap-4">
+    <div class="flex flex-wrap justify-center sm:justify-start gap-4">
       <Button
         href="/spreadsheet"
         color="blue"
@@ -25,9 +27,11 @@ import Button from '../../Button.astro';
     </div>
   </div>
 
-  <img
-    src="./shimg.webp"
-    alt="Extreme Demons Spreadsheet"
-    class="w-full md:w-1/2 rounded-lg shadow-lg -rotate-2 order-1 md:order-2"
-  />
+  <div class="w-full sm:w-1/2 order-1 sm:order-2">
+    <img
+      src="./shimg.webp"
+      alt="Extreme Demons Spreadsheet"
+      class="rounded-lg shadow-lg sm:-rotate-2"
+    />
+  </div>
 </div>
