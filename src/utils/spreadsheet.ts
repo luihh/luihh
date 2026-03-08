@@ -7,8 +7,10 @@ import {
 
 import type { CompletionStatus, TierColorKey } from '../consts';
 
-export const getCellColor = (value: CompletionStatus): string =>
-  CELL_COLORS[value as CompletionStatus] || '';
+export const getCellColor = (value: string): string => {
+  if (value.startsWith('http')) return CELL_COLORS['TRUE'];
+  else return CELL_COLORS[value as CompletionStatus] || '';
+};
 
 export const getTierColor = (value: TierColorKey): string =>
   TIER_COLORS[value as TierColorKey] || '';
@@ -34,4 +36,19 @@ export const getWorstFailColor = (value: string): string => {
     else return TEXT_COLORS.GREEN;
   }
   return '';
+};
+
+export const getRecommendedColor = (value: string): string => {
+  switch (value) {
+    case 'YES':
+      return TEXT_COLORS.GREEN;
+    case 'MAYBE':
+      return TEXT_COLORS.YELLOW;
+    case 'NO':
+      return TEXT_COLORS.RED;
+    case 'NEVER':
+      return TEXT_COLORS.DARK_RED;
+    default:
+      return '';
+  }
 };

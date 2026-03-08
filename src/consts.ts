@@ -12,6 +12,7 @@ export const TEXT_COLORS = {
   GREEN: 'text-ctp-green',
   YELLOW: 'text-ctp-yellow',
   RED: 'text-ctp-red',
+  DARK_RED: 'text-red-600',
 } as const;
 
 export const RATING_THRESHOLDS = {

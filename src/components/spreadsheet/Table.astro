@@ -3,6 +3,7 @@ import { SHEET_ID } from 'astro:env/server';
 import {
   getCellColor,
   getEnjoymentColor,
+  getRecommendedColor,
   getTierColor,
   getWorstFailColor,
 } from '../../utils/spreadsheet';
@@ -11,15 +12,17 @@ import type { CompletionStatus } from '../../consts';
 
 import CheckIcon from '../icons/Check.astro';
 import CrossIcon from '../icons/Cross.astro';
+import LinkIcon from '../icons/Link.astro';
 import OngoingIcon from '../icons/Ongoing.astro';
 import QuestionMarkIcon from '../icons/QuestionMark.astro';
 
 interface SheetRow {
   '#': string;
   Level: string;
-  '100%': CompletionStatus;
+  '100%': CompletionStatus | string;
   Attempts: string;
   Enjoyment: string;
+  Recommended: string;
   'Worst Fail': string;
   'Tier (NLW)': string;
   'Extras / Fun Facts': string;
@@ -55,16 +58,26 @@ const headers =
               let cellColumn = Object.keys(row)[cellIndex];
               return (
                 <td
-                  class={`px-4 py-4 font-bold whitespace-nowrap 
+                  class={`px-4 py-4 font-bold whitespace-nowrap
                 ${cellColumn === '#' ? 'bg-ctp-mantle text-ctp-overlay1' : ''} 
                 ${cellColumn === 'Level' ? 'text-ctp-text' : ''} 
                 ${cellColumn === '100%' ? getCellColor(cell) : ''}
                 ${cellColumn === 'Enjoyment' ? getEnjoymentColor(cell) : ''} 
+                ${cellColumn === 'Recommended?' ? getRecommendedColor(cell) : ''} 
                 ${cellColumn === 'Worst Fail' ? getWorstFailColor(cell) : ''}
                 ${cellColumn === 'Tier (NLW)' ? getTierColor(cell) : ''}
                 `}
                 >
                   <div class="flex justify-center">
+                    {cellIndex === 2 && cell.startsWith('http') && (
+                      <a
+                        href={cell}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <LinkIcon className="text-xl text-black/50" />
+                      </a>
+                    )}
                     {cellIndex === 2 && cell === 'TRUE' && (
                       <CheckIcon class="text-xl text-black/50" />
                     )}

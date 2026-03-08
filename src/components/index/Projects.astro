@@ -1,0 +1,127 @@
+---
+import Button from '../Button.astro';
+import GitHub from '../icons/GitHub.astro';
+import Link from '../icons/Link.astro';
+import CodeIcon from '../icons/Code.astro';
+
+import Tailwindcss from 'simple-icons-astro/Tailwindcss';
+import AstroIcon from 'simple-icons-astro/Astro';
+import Discorddotjs from 'simple-icons-astro/Discorddotjs';
+import React from 'simple-icons-astro/React';
+import TanStack from 'simple-icons-astro/Tanstack';
+
+const TAGS = {
+  TAILWIND: {
+    name: 'Tailwind CSS',
+    class: 'bg-[#090d18] text-[#06B6D4]',
+    icon: Tailwindcss,
+  },
+
+  ASTRO: {
+    name: 'Astro',
+    class: 'bg-[linear-gradient(to_right,#df3771,#f159f8)] text-white',
+    icon: AstroIcon,
+  },
+
+  REACT: {
+    name: 'React',
+    class: 'bg-[#23272f] text-[#61DAFB]',
+    icon: React,
+  },
+
+  TANSTACK: {
+    name: 'TanStack Start',
+    class: 'bg-[linear-gradient(to_right,#53c79e,#f2ea7d,#ff9952)] text-black',
+    icon: TanStack,
+  },
+
+  DISCORDJS: {
+    name: 'Discord.js',
+    class: 'bg-[#5865f2] text-[#fcfcfc]',
+    icon: Discorddotjs,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: 'Ranky',
+    description: `Create album tracklist rankings and export them as an image to share with friends!`,
+    link: 'https://ranky.luihh.dev/',
+    github: 'https://github.com/luihh/ranky',
+    image: '/ranky.webp',
+    tags: [TAGS.TANSTACK, TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
+    title: 'Luis bot',
+    description:
+      'Luis is a Geometry Dash Fishing Bot where you can fish for Extreme Demons, earn points based on difficulty, and spend them on fun minigames!',
+    link: 'https://luis.luihh.dev/',
+    github: 'https://github.com/luihh/luis-web',
+    image: '/luis-web.webp',
+    tags: [TAGS.DISCORDJS, TAGS.ASTRO, TAGS.TAILWIND],
+  },
+];
+---
+
+<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-ctp-text">
+  <CodeIcon class="size-8" />
+  Projects
+</h2>
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
+      <article class="flex flex-col space-x-0 space-y-8 md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 shadow-xl overflow-clip rounded-xl">
+            <img
+              alt={`${title} image.`}
+              class="object-cover object-top w-full h-full"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg text-center md:text-left">
+          <h3 class="text-2xl font-bold text-ctp-text">{title}</h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mx-auto md:mx-0 mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-ctp-subtext1">{description}</div>
+            <footer class="flex mx-auto md:mx-0 mt-4 gap-x-4">
+              {github && (
+                <Button
+                  href={github}
+                  color="blue"
+                >
+                  <GitHub class="size-6" />
+                  Code
+                </Button>
+              )}
+              {link && (
+                <Button
+                  href={link}
+                  color="blue"
+                >
+                  <Link class="size-4" />
+                  Preview
+                </Button>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
