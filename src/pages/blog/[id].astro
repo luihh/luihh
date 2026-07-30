@@ -4,7 +4,7 @@ import Container from '../../components/Container.astro';
 import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 import { getCollection, render } from 'astro:content';
 import { dateLocales } from '../../utils/i18n';
-import '../../../styles/prose.css';
+import '../../styles/prose.css';
 
 export const prerender = true;
 
@@ -22,20 +22,33 @@ const { Content } = await render(post);
 
 <Layout title={post.data.title}>
   <Container>
-    <div class="text-center">
-      <h1 class="text-ctp-text font-bold text-4xl">
-        {post.data.title}
-      </h1>
-      <p class="text-ctp-subtext1 opacity-70">
-        {
-          post.data.pubDate.toLocaleDateString(dateLocales.en, {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })
-        }
-      </p>
-      <span class="prose"><LanguageSwitcher /></span>
+    <div
+      class="flex flex-col-reverse sm:flex-row items-center justify-center gap-4 sm:gap-8"
+    >
+      <div class="text-center">
+        <h1 class="text-ctp-text font-bold text-4xl">
+          {post.data.title}
+        </h1>
+        <p class="text-ctp-subtext1 opacity-70">
+          {
+            post.data.pubDate.toLocaleDateString(dateLocales.en, {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })
+          }
+        </p>
+        <span class="prose"><LanguageSwitcher /></span>
+      </div>
+      {
+        post.data.image && (
+          <img
+            src={post.data.image}
+            alt={post.data.title}
+            class="size-28 rounded-2xl rotate-2 object-cover shrink-0"
+          />
+        )
+      }
     </div>
   </Container>
   <article class="prose">
