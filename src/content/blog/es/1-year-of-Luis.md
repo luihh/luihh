@@ -1,6 +1,6 @@
 ---
 title: '1 año de Luis'
-pubDate: 2026-07-29
+pubDate: 2026-07-30
 lang: 'es'
 image: '/luis.webp'
 translationId: '1-year-of-Luis'
