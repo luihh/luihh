@@ -4,6 +4,7 @@ import Container from '../../../components/Container.astro';
 import LanguageSwitcher from '../../../components/LanguageSwitcher.astro';
 import { getCollection, render } from 'astro:content';
 import { dateLocales } from '../../../utils/i18n';
+import '../../../styles/prose.css';
 
 export const prerender = true;
 
@@ -20,24 +21,24 @@ const { Content } = await render(post);
 ---
 
 <Layout title={post.data.title}>
-  <article class="px-4">
-    <Container>
-      <div class="pb-8 text-center">
-        <h1 class="text-ctp-text font-bold text-4xl">
-          {post.data.title}
-        </h1>
-        <p class="text-ctp-subtext1 opacity-70">
-          {
-            post.data.pubDate.toLocaleDateString(dateLocales.es, {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })
-          }
-        </p>
-        <LanguageSwitcher />
-      </div>
-      <div class="text-lg text-ctp-subtext1"><Content /></div>
-    </Container>
+  <Container>
+    <div class="text-center">
+      <h1 class="text-ctp-text font-bold text-4xl">
+        {post.data.title}
+      </h1>
+      <p class="text-ctp-subtext1 opacity-70">
+        {
+          post.data.pubDate.toLocaleDateString(dateLocales.es, {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })
+        }
+      </p>
+      <span class="prose"><LanguageSwitcher /></span>
+    </div>
+  </Container>
+  <article class="prose">
+    <Content />
   </article>
 </Layout>

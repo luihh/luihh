@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+@import '@catppuccin/tailwindcss/mocha.css';
+
+.prose {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  @apply text-ctp-subtext1;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  margin: 2rem 0 0.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  @apply text-ctp-text;
+}
+
+.prose h1 {
+  font-size: 2.75rem;
+  margin-top: 0;
+}
+.prose h2 {
+  font-size: 2rem;
+}
+.prose h3 {
+  font-size: 1.5rem;
+}
+.prose h4 {
+  font-size: 1.25rem;
+}
+
+.prose p {
+  margin-bottom: 1.5em;
+}
+
+.prose strong,
+.prose b {
+  font-weight: 700;
+  @apply text-ctp-text;
+}
+
+.prose a {
+  @apply text-ctp-sapphire;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+.prose a:hover {
+  @apply text-ctp-sky;
+}
+
+.prose .stat {
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  @apply text-ctp-sapphire;
+}
+
+.prose code {
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  @apply bg-ctp-surface0 text-ctp-text;
+}
+
+.prose pre {
+  padding: 1.25em;
+  border-radius: 10px;
+  overflow-x: auto;
+  @apply bg-ctp-mantle;
+}
+
+.prose pre > code {
+  all: unset;
+  font-family: inherit;
+}
+
+.prose blockquote {
+  margin: 1.5em 0;
+  padding: 0.25em 0 0.25em 1.25em;
+  font-size: 1.2em;
+  font-style: italic;
+  @apply border-l-4 border-ctp-sapphire text-ctp-subtext0;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px dashed;
+  margin: 2.5em 0;
+  @apply border-ctp-surface1;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 1.5em 0;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0 0 1.5em;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin-bottom: 0.4em;
+}
+
+.prose li::marker {
+  @apply text-ctp-sapphire;
+}
+
+@media (max-width: 720px) {
+  .prose {
+    font-size: 1.0625rem;
+    max-width: calc(100% - 2em);
+  }
+  .prose h1 {
+    font-size: 2.1rem;
+  }
+  .prose h2 {
+    font-size: 1.6rem;
+  }
+}
