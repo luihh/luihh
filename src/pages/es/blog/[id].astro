@@ -1,0 +1,43 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Container from '../../../components/Container.astro';
+import LanguageSwitcher from '../../../components/LanguageSwitcher.astro';
+import { getCollection, render } from 'astro:content';
+import { dateLocales } from '../../../utils/i18n';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.lang === 'es');
+  return posts.map((post) => ({
+    params: { id: post.data.translationId },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title}>
+  <article class="px-4">
+    <Container>
+      <div class="pb-8 text-center">
+        <h1 class="text-ctp-text font-bold text-4xl">
+          {post.data.title}
+        </h1>
+        <p class="text-ctp-subtext1 opacity-70">
+          {
+            post.data.pubDate.toLocaleDateString(dateLocales.es, {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })
+          }
+        </p>
+        <LanguageSwitcher />
+      </div>
+      <div class="text-lg text-ctp-subtext1"><Content /></div>
+    </Container>
+  </article>
+</Layout>

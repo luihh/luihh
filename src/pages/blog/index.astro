@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Container from '../../components/Container.astro';
+import { getCollection } from 'astro:content';
+import { dateLocales } from '../../utils/i18n';
+
+const collection = await getCollection(
+  'blog',
+  ({ data }) => data.lang === 'en',
+);
+const posts = collection.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout title="Luihh's Blog">
+  <main class="px-4">
+    <Container>
+      <h1 class="text-4xl font-bold mb-6 text-ctp-text">Blog</h1>
+      <ul class="space-y-4">
+        {
+          posts.map((post) => (
+            <li>
+              <a
+                href={`/blog/${post.data.translationId}`}
+                class="text-ctp-text text-xl font-semibold hover:underline"
+              >
+                {post.data.title}
+              </a>
+              <p class="text-sm opacity-70 text-ctp-subtext1">
+                {post.data.pubDate.toLocaleDateString(dateLocales.en, {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </Container>
+  </main>
+</Layout>

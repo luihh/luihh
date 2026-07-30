@@ -1,0 +1,11 @@
+---
+const path = Astro.url.pathname;
+const isSpanish = path.startsWith('/es');
+const otherPath = isSpanish ? path.replace(/^\/es/, '') || '/' : `/es${path}`;
+---
+
+<a
+  href={otherPath}
+  class="text-sm text-ctp-subtext0 opacity-75 hover:underline"
+  >{isSpanish ? 'See in English' : 'Ver en Español'}</a
+>
