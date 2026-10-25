@@ -1,46 +1,23 @@
-# Astro Starter Kit: Basics
+<pre>
+guest@github:~$ neofetch
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+       /\            luihh@github
+      /  \           ────────────────────
+     /    \          Role ........ Full-stack developer
+    /      \         Languages ... JavaScript, TypeScript
+   /   ,,   \        Frameworks .. React, TanStack Start, Astro, discord.js, CommandKit
+  /   |  |   \       OS .......... Arch Linux
+ /_-''    ''-_\      Shell ....... fish
+                     Building .... Discord bots, web apps
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+guest@github:~$ ls projects/
+<a href="https://github.com/luihh/ranky">ranky/</a>  <a href="https://github.com/luihh/luis-web">luis/</a>  <a href="https://github.com/luihh/find-luigi-verification">find-luigi-verification/</a>
 
-## 🚀 Project Structure
+guest@github:~$ cat links.txt
+Website:       <a href="https://luihh.dev">luihh.dev</a>
+Last.fm:       <a href="https://www.last.fm/user/Luihh23">Luihh23</a>
+RateYourMusic: <a href="https://rateyourmusic.com/~Luihh">~Luihh</a>
+Ko-fi:         <a href="https://ko-fi.com/luihh">Luihh</a>
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+guest@github:~$ _
+</pre>
