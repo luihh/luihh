@@ -17,10 +17,10 @@ $ ls ai-slop/
 <a href="https://github.com/luihh/discord-message-sender">discord-message-sender/</a>  <a href="https://github.com/luihh/discord-pagination">discord-pagination/</a>
 
 $ cat links.txt
-Website:       <a href="https://luihh.dev">luihh.dev</a>
-Last.fm:       <a href="https://www.last.fm/user/Luihh23">Luihh23</a>
-RateYourMusic: <a href="https://rateyourmusic.com/~Luihh">~Luihh</a>
-Ko-fi:         <a href="https://ko-fi.com/luihh">Luihh</a>
+Website:        <a href="https://luihh.dev">luihh.dev</a>
+Last.fm:        <a href="https://www.last.fm/user/Luihh23">Luihh23</a>
+RateYourMusic:  <a href="https://rateyourmusic.com/~Luihh">~Luihh</a>
+Ko-fi:          <a href="https://ko-fi.com/luihh">Luihh</a>
 
 $ _
 </pre>
